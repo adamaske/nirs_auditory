@@ -1,0 +1,6 @@
+numpy
+matplotlib
+pylsl
+sounddevice
+pygame
+neuropipeline==0.2.2
