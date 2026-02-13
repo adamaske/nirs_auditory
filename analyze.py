@@ -8,7 +8,7 @@ pp = fNIRSPreprocessor(fnirs) # Create preprocesssor
 pp.set_optical_density(True) # Configure
 pp.set_hemoglobin_concentration(True)
 pp.set_motion_correction(True)
-pp.set_temporal_filtering(True, lowcut=0.01, highcut=0.06, order=15)
+pp.set_temporal_filtering(True, lowcut=0.01, highcut=0.5, order=5)
 pp.set_detrending(True)
 pp.set_normalization(False)
 
@@ -28,6 +28,7 @@ nplv.set_spectrum_mode("FFT") # What type of spectrum to show: "FFT" or "PSD"
 
 # NOTE : The wavelet method is computationally intensive
 # Try "STFT" first, then "Wavelet" if needed
+# "CMT" Complex Morlet Transform  gives better time-frequency resolution, but is even more computationally intensive
 nplv.set_spectrogram_method("STFT") 
 
 nplv.open(fnirs)
